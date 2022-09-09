@@ -75,7 +75,7 @@ async function activateXR() {
   session.addEventListener("select", (event) => {
     if (phoenix) {
       const clone = phoenix.clone();
-      clone.scale.set(0.1, 0.1, 0.1);
+      clone.scale.setScalar(0.01);
       clone.position.copy(reticle.position);
       scene.add(clone);
     }
