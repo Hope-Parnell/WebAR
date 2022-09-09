@@ -70,12 +70,12 @@ async function activateXR() {
   let phoenix;
   loader.load("Models/Phoenix/scene.gltf", function(gltf) {
     phoenix = gltf.scene;
+    phoenix.scale.setScalar(0.01);
   });
 
   session.addEventListener("select", (event) => {
     if (phoenix) {
       const clone = phoenix.clone();
-      clone.scale.setScalar(0.01);
       clone.position.copy(reticle.position);
       scene.add(clone);
     }
