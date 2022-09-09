@@ -70,7 +70,7 @@ async function activateXR() {
   let phoenix;
   loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/sunflower/sunflower.gltf", function(gltf) {
     phoenix = gltf.scene;
-    phoenix.scale.set(0.0001, 0.0001, 0.0001);
+    phoenix.scale.set(0.1, 0.1, 0.1);
   });
 
   session.addEventListener("select", (event) => {
