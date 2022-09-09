@@ -68,9 +68,9 @@ async function activateXR() {
   })
 
   let phoenix;
-  loader.load("Models/Phoenix/scene.gltf", function(gltf) {
+  loader.load("Models/Fairy/scene.gltf", function(gltf) {
     phoenix = gltf.scene;
-    phoenix.scale.set(0.000001, 0.000001, 0.000001);
+    phoenix.scale.set(0.1, 0.1, 0.1);
   });
 
   session.addEventListener("select", (event) => {
