@@ -68,7 +68,7 @@ async function activateXR() {
   })
 
   let phoenix;
-  loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/sunflower/sunflower.gltf", function(gltf) {
+  loader.load("Models/Phoenix/scene.gltf", function(gltf) {
     phoenix = gltf.scene;
     phoenix.scale.set(0.1, 0.1, 0.1);
   });
