@@ -5,24 +5,28 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>Hope Parnell</title>
-
+  <link rel="stylesheet" type="text/css" href="business_card.css" />
   <!-- three.js -->
   <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
   <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
 </head>
 <body>
-<img src="Images/fairy.png" width=100px height=100px>
-<h1>Hope Parnell</h1>
-<h2>XR Developer</h2>
-<div>
-  <a href="https://github.com/Hope-Parnell"><img alt="GitHub" src="Images/gitHubFlower.png" width="50px" height="50px"></a>
-  <a href="https://www.youtube.com/channel/UCbWnECaZ1hlbQV6YU5Bmk2Q"><img alt="YouTube" src="Images/YouTube.png" width="50px" height="50px"></a>
-  <a href="https://www.linkedin.com/in/hope4tech/"><img alt="LinkedIn" src="Images/LinkedIn.png" width="50px" height="50px"></a>
-  <a href="https://www.facebook.com/DanketsuTsuki/"><img alt="Facebook" src="Images/Facebook.png" width="50px" height="50px"></a>
+<div class="container">
+  <div class="image"><img src="Images/fairy.png" width=150px height=150px></div>
+  <div class="text">
+    <h1>Hope Parnell</h1>
+    <h2>XR/UI Developer</h2>
+    <div class="links">
+      <a href="https://github.com/Hope-Parnell"><img alt="GitHub" src="Images/gitHubFlower.png" width="50px" height="50px"></a>
+      <a href="https://www.linkedin.com/in/hope4tech/"><img alt="LinkedIn" src="Images/LinkedIn.png" width="50px" height="50px"></a>
+      <a href="https://www.youtube.com/channel/UCbWnECaZ1hlbQV6YU5Bmk2Q"><img alt="YouTube" src="Images/YouTube.png" width="50px" height="50px"></a>
+      <a href="https://www.facebook.com/DanketsuTsuki/"><img alt="Facebook" src="Images/Facebook.png" width="50px" height="50px"></a>
+    </div>
+  </div>
 </div>
 <!-- Starting an immersive WebXR session requires user interaction.
     We start this one with a simple button. -->
-<button onclick="activateXR()">Start Hello WebXR</button>
+<button onclick="activateXR()">Start WebXR Experience</button>
 <script>
 async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
@@ -75,15 +79,15 @@ async function activateXR() {
     scene.add(reticle);
   })
 
-  let phoenix;
-  loader.load("Models/Phoenix/phoenix.gltf", function(gltf) {
-    phoenix = gltf.scene;
-    phoenix.scale.set(0.001, 0.001, 0.001);
+  let flower;
+  loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/sunflower/sunflower.gltf", function(gltf) {
+    flower = gltf.scene;
+    flower.scale.set(0.001, 0.001, 0.001);
   });
 
   session.addEventListener("select", (event) => {
-    if (phoenix) {
-      const clone = phoenix.clone();
+    if (flower) {
+      const clone = flower.clone();
       clone.position.copy(reticle.position);
       scene.add(clone);
     }
