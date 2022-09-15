@@ -89,6 +89,7 @@ async function activateXR() {
     if (phoenix) {
       const clone = phoenix.clone();
       clone.position.copy(reticle.position);
+      clone.setRotationFromQuaternion(camera.quaternion);
       scene.add(clone);
     }
   });
