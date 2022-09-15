@@ -82,7 +82,6 @@ async function activateXR() {
   let flower;
   loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/sunflower/sunflower.gltf", function(gltf) {
     flower = gltf.scene;
-    flower.scale.set(0.001, 0.001, 0.001);
   });
 
   session.addEventListener("select", (event) => {
