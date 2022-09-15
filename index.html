@@ -89,9 +89,6 @@ async function activateXR() {
     if (phoenix) {
       const clone = phoenix.clone();
       clone.position.copy(reticle.position);
-      let cameraPos
-      camera.getWorldDirection(cameraPos);
-      clone.lookAt(cameraPos);
       scene.add(clone);
     }
   });
