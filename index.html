@@ -70,6 +70,7 @@ async function activateXR() {
   let phoenix;
   loader.load("Models/Phoenix/phoenix_bird.glb", function(gltf) {
     phoenix = gltf.scene;
+    phoenix.scale.SetScalar(0.000001);
   });
 
   session.addEventListener("select", (event) => {
